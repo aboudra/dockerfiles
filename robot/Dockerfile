@@ -41,6 +41,9 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
  https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+ https://dl.google.com/android/repository/tools_r25.2.3-linux.zip \
+ https://selenium-release.storage.googleapis.com/3.0/selenium-html-runner-3.0.1.jar \
+ https://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar \
  && dpkg -i *.deb \
  && tar xf geckodriver-*.tar.gz \
  && tar xf phantomjs-*.tar.bz2 \
