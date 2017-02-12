@@ -19,6 +19,10 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  libappindicator1 \
  libfontconfig \
  libpango1.0-0 \
+ maven \
+ nodejs \
+ nodejs-legacy \
+ npm \
  openjdk-8-jdk \
  openssh-server \
  python-decorator \
