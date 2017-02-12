@@ -51,6 +51,7 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  robotframework-requests \
  robotframework-selenium2library \
  robotframework-xvfb \
+ && npm install -g slimerjs casperjs appium wd \
  && apt-get clean \
  && rm -rf \
  /var/lib/apt/lists/* \
