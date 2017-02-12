@@ -3,6 +3,7 @@ FROM ubuntu:xenial
 COPY setup-sshd /usr/sbin/setup-sshd
 
 RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/sources.list \
+ && echo 'deb http://archive.ubuntu.com/ubuntu xenial-updates main universe' >> /etc/apt/sources.list \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends software-properties-common \
  && add-apt-repository -y ppa:git-core/ppa \
