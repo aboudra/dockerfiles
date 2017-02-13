@@ -10,6 +10,7 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+ apache2 \
  bzip2 \
  chromium-chromedriver \
  curl \
@@ -39,6 +40,8 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  xvfb \
  zip \
  && service postgresql start \
+ && a2enmod cache_disk headers proxy_http rewrite ssl \
+ && a2dissite 000-default \
  && wget -q \
  https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
  https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
@@ -71,5 +74,5 @@ RUN useradd -m user \
  && chmod 0440 /etc/sudoers.d/jenkins \
  && mkdir -p /var/run/sshd /home/user/bin
 
-EXPOSE 22
+EXPOSE 22 80 443
 ENTRYPOINT ["/usr/sbin/setup-sshd"]
