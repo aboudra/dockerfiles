@@ -25,6 +25,7 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  npm \
  openjdk-8-jdk \
  openssh-server \
+ postgresql \
  python-decorator \
  python-pip \
  python-requests \
@@ -37,6 +38,7 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu xenial main universe' > /etc/apt/
  wget \
  xvfb \
  zip \
+ && service postgresql start \
  && wget -q \
  https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
  https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
